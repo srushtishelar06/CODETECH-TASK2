@@ -10,7 +10,8 @@ DURATION: October 23rd 2024 to November 23rd 2024
 
 MENTOR: NEELA  SANTHOSH KUMAR
 
- PROJECT: Student Grade Calculator
+ PROJECT: Student Grade Calculator![students grade tracker output](https://github.com/user-attachments/assets/d13ec4bf-cf98-4b64-982a-97f7651e56bb)
+
  
 #### **Objective**:
 This **Student Grade Calculator** program is designed to calculate a student's GPA based on the letter grades provided for each subject. It converts letter grades into a numeric GPA, computes an average, and determines an overall letter grade equivalent.
