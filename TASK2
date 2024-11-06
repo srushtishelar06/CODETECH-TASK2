@@ -1,0 +1,51 @@
+def letter_to_grade(letter):
+    if letter == 'A':
+        return 4.0
+    elif letter == 'B':
+        return 3.0
+    elif letter == 'C':
+        return 2.0
+    elif letter == 'D':
+        return 1.0
+    elif letter == 'F':
+        return 0.0
+    else:
+        return None  # For invalid grades
+
+def calculate_gpa(grades):
+    if not grades:
+        return 0.0
+    return sum(grades) / len(grades)
+
+def main():
+    grades = []
+    subjects = []
+
+    print("Welcome to the Student Grade Calculator!")
+
+    while True:
+        subject = input("Enter the subject name (or type 'done' to finish): ")
+        if subject.lower() == 'done':
+            break
+        grade = input(f"Enter the letter grade for {subject} (A, B, C, D, F): ").upper()
+        numeric_grade = letter_to_grade(grade)
+        if numeric_grade is not None:
+            grades.append(numeric_grade)
+            subjects.append(subject)
+        else:
+            print("Invalid letter grade. Please enter A, B, C, D, or F.")
+
+    if grades:
+        average_grade = calculate_gpa(grades)
+        letter_grade = 'A' if average_grade >= 3.5 else 'B' if average_grade >= 2.5 else 'C' if average_grade >= 1.5 else 'D' if average_grade >= 0.5 else 'F'
+        
+        print("\n--- Student Grade Report ---")
+        for subject, grade in zip(subjects, grades):
+            print(f"{subject}: {grade}")
+        print(f"\nAverage Grade (GPA): {average_grade:.2f}")
+        print(f"Letter Grade: {letter_grade}")
+    else:
+        print("No grades were entered.")
+
+if __name__ == "__main__":
+    main()
